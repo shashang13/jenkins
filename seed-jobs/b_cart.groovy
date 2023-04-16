@@ -3,7 +3,7 @@ multibranchPipelineJob('CI-Pipelines/cart') {
     github {
       id('23232323') // IMPORTANT: use a constant and unique identifier
 //      scanCredentialsId('github-ci')
-      repository('cart')
+      repository('shashang13/cart')
     }
   }
   orphanedItemStrategy {
