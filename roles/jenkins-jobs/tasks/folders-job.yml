@@ -14,4 +14,4 @@
 
 - name: Update the dir
   when: check_dir.rc == 0
-  shell: "cat /tmp/mb-job.xml | {{ JENKINS_CLI_PREFIX }} update-job {{ item.name }}"
+  shell: "cat /tmp/folder-job.xml | {{ JENKINS_CLI_PREFIX }} update-job {{ item.name }}"
