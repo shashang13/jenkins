@@ -17,5 +17,5 @@
   when: check_job.rc == 3
 
 - name: Update the job
-  shell: "{{ JENKINS_CLI_PREFIX }} update-job {{ item.name }}"
+  shell: "cat /tmp/job.xml | {{ JENKINS_CLI_PREFIX }} update-job {{ item.name }}"
   when: check_job.rc == 0
