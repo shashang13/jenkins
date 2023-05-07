@@ -1,0 +1,3 @@
+- name: New Jenkins job
+  ansible.builtin.debug:
+    msg: Hello
