@@ -9,13 +9,13 @@
 
 - name: Upload the template
   template:
-    src: job.xml
-    dest: /tmp/job.xml
+    src: mb-job.xml
+    dest: /tmp/mb-job.xml
 
 - name: Create the job
-  shell: "cat /tmp/job.xml | {{ JENKINS_CLI_PREFIX }} create-job {{ item.name }}"
+  shell: "cat /tmp/mb-job.xml | {{ JENKINS_CLI_PREFIX }} create-job {{ item.name }}"
   when: check_job.rc == 3
 
 - name: Update the job
-  shell: "cat /tmp/job.xml | {{ JENKINS_CLI_PREFIX }} update-job {{ item.name }}"
+  shell: "cat /tmp/mb-job.xml | {{ JENKINS_CLI_PREFIX }} update-job {{ item.name }}"
   when: check_job.rc == 0
