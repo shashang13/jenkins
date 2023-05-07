@@ -5,11 +5,11 @@
   ansible.builtin.include_tasks:
     file: folders-job.yml
   loop:
-    - {name: "dir2", description: "dir2"}
+    - {name: "CI-Pipelines", description: "ALL CI Pipelines"}
 
 - name: Create Jenkins Multi Branch Pipelines Job
   ansible.builtin.include_tasks:
     file: mb-job.yml
   loop:
-    - {name: "sample1", repoName: "sample2"}
+    - {name: "cart", repoName: "cart", dirName: "CI-Pipelines/"}
 
