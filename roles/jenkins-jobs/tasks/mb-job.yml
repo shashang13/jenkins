@@ -1,4 +1,4 @@
-- name: Check if job exists
+- name: Check if {{ item.name }} job exists
   shell: "{{ JENKINS_CLI_PREFIX }} get-job {{item.dirName}}{{ item.name }}"
   ignore_errors: true
   register: check_job
@@ -12,10 +12,10 @@
     src: mb-job.xml
     dest: /tmp/mb-job.xml
 
-- name: Create the job
+- name: Create {{ item.name }} job
   shell: "cat /tmp/mb-job.xml | {{ JENKINS_CLI_PREFIX }} create-job {{item.dirName}}{{ item.name }}"
   when: check_job.rc == 3
 
-- name: Update the job
+- name: Update {{ item.name }} job
   shell: "cat /tmp/mb-job.xml | {{ JENKINS_CLI_PREFIX }} update-job {{item.dirName}}{{ item.name }}"
   when: check_job.rc == 0
