@@ -8,10 +8,10 @@
     src: folder-job.xml
     dest: /tmp/folder-job.xml
 
-- name: Create the job
+- name: Create the dir
   when: check_dir.rc == 3
   shell: "cat /tmp/folder-job.xml | {{ JENKINS_CLI_PREFIX }} create-job {{ item.name }}"
 
-- name: Update the job
+- name: Update the dir
   when: check_dir.rc == 0
   shell: "cat /tmp/mb-job.xml | {{ JENKINS_CLI_PREFIX }} update-job {{ item.name }}"
