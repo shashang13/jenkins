@@ -1,6 +1,12 @@
 - name: Check Jenkins Connection
   shell: "{{ JENKINS_CLI_PREFIX }} who-am-i"
 
+- name: Create Jenkins folder Job
+  ansible.builtin.include_tasks:
+    file: folders-job.yml
+  loop:
+    - {name: "dir2", description: "dir2"}
+    -
 - name: Create Jenkins Multi Branch Pipelines Job
   ansible.builtin.include_tasks:
     file: mb-job.yml
