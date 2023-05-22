@@ -12,5 +12,4 @@
     file: mb-job.yml
   loop:
     - {name: "cart", repoName: "cart", dirName: "CI-Pipelines/"}
-    - {name: "test", repoName: "test", dirName: ""}
     - {name: "catalogue", repoName: "catalogue", dirName: "CI-Pipelines/"}
